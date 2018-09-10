@@ -1,0 +1,12 @@
+﻿@page "{id}"
+@model DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Comfirm Delete!</h3>
+
+<form method="post">
+    <a href="/LoggedUser/Vehicles/Index" class="btn btn-default">Cancel</a>
+    <button type="submit" asp-area="LoggedUser" asp-page="Delete" class="btn btn-danger">Delete</button>
+</form>

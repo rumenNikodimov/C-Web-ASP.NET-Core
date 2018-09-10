@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CarConciseViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>All Cars</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Car Id</th>
+            <th>Make</th>
+            <th>Modification</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    @foreach (var car in Model)
+    {
+        <tr>
+            <td>@car.Id</td>
+            <td>@car.Make</td>
+            <td>@car.Modification</td>
+            <td>
+                <a asp-area="LoggedUser" asp-controller="Vehicles" asp-action="Details" asp-route-id="@car.Id" class="btn btn-primary">Details</a>
+                <a asp-area="LoggedUser" asp-controller="Vehicles" asp-action="Edit" asp-route-id="@car.Id" class="btn btn-warning">Edit</a>
+                <a asp-area="LoggedUser" asp-page="/Vehicles/Delete" asp-route-id="@car.Id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
+
+
+
+
+

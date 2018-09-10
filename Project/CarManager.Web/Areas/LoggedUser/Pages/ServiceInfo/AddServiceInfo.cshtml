@@ -1,0 +1,57 @@
+﻿@page "{id}"
+@model AddServiceInfoModel
+@{
+}
+
+<h2>Add Service Data</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-area="LoggedUser" asp-page="/ServiceInfo/AddServiceInfo" method="post">
+            <hr />
+            <div class="form-group">
+                <label asp-for="@Model.Name"></label>
+                <input asp-for="@Model.Name" class="form-control" />
+                <span asp-validation-for="@Model.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Price"></label>
+                <input asp-for="@Model.Price" class="form-control" />
+                <span asp-validation-for="@Model.Price" class="text-danger"></span>
+            </div>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            @*<div class="form-group">
+            <label asp-for="@Model.DateOfRepair"></label>
+            <input asp-for="@Model.DateOfRepair" class="form-control" />
+            <span asp-validation-for="@Model.DateOfRepair" class="text-danger"></span>
+        </div>*@
+            <div class="form-group">
+                <label asp-for="@Model.ExpireDate"></label>
+                <input asp-for="@Model.ExpireDate" class="form-control" />
+                <span asp-validation-for="@Model.ExpireDate" class="text-danger"></span>
+            </div>
+
+            @*<div class="form-group">
+            <label asp-for="@Model.CurrentKilometers"></label>
+            <input asp-for="@Model.CurrentKilometers" class="form-control" />
+            <span asp-validation-for="@Model.CurrentKilometers" class="text-danger"></span>
+        </div>*@
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="@Model.ExpireKilometers"></label>
+                <input asp-for="@Model.ExpireKilometers" class="form-control" />
+                <span asp-validation-for="@Model.ExpireKilometers" class="text-danger"></span>
+            </div>
+
+            @*<div class="form-group">
+            <label asp-for="@Model.Description"></label>
+            <textarea placeholder="Describe" asp-for="@Model.Description" class="form-control" />
+            <span asp-validation-for="@Model.Description" class="text-danger"></span>
+        </div>*@
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <a href="/LoggedUser/Vehicles/Index" class="btn btn-default">Cancel</a>
+            <button type="submit" class="btn btn-success">Save</button>
+        </form>
+
+    </div>
+</div>

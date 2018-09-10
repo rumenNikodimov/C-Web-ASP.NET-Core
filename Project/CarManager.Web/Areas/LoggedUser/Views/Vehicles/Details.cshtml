@@ -1,0 +1,17 @@
+﻿@model CarDetailsViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<p><strong>Id:</strong> <a>@Model.Id</a></p>
+<p><strong>Name:</strong> <a>@Model.Make</a></p>
+<p><strong>Model:</strong> @Model.Modification</p>
+<p><strong>Horse Power:</strong> @Model.HorsePower</p>
+<p><strong>Registration Date:</strong> @Model.FirstRegistrationDate</p>
+<p><strong>Kilometers:</strong> @Model.Kilometers</p>
+
+<a asp-area="LoggedUser" asp-page="/Refuel/AddRefueling" asp-route-id="@Model.Id" class="btn btn-default">Add Refueling</a>
+<a asp-area="LoggedUser" asp-page="/ServiceInfo/AddServiceInfo" asp-route-id="@Model.Id" class="btn btn-default">Add Service Data</a>
+<a asp-area="LoggedUser" asp-page="/Tax/AddTax" asp-route-id="@Model.Id" class="btn btn-default">Add Tax</a>
